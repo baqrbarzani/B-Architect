@@ -5,7 +5,7 @@ def show_home():
     # Banner Image
     banner_path = "projects/Architecture.jpg"
     if os.path.exists(banner_path):
-        st.image(banner_path, use_column_width=True, caption="Timeless Architectural Vision")
+        st.image(banner_path, use_container_width=True, caption="Timeless Architectural Vision")
 
     # Intro Text
     st.title("Welcome to Our Architectural Studio 🏛️")
