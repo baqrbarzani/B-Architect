@@ -3,38 +3,24 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Background image */
+        /* Dark base theme */
         .stApp {
-            background-image: url("projects/Baqrbarzani.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: #121212;
             position: relative;
             z-index: 1;
             color: #f0f0f0;
+            padding: 1.5rem;
         }
 
-        /* Dark overlay for readability */
-        .stApp::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);  /* 70% dark overlay */
-            z-index: -1;
-        }
-
-        /* Base layout and fonts */
         html, body, [class*="css"] {
             font-family: 'Segoe UI', sans-serif;
             font-size: 16px;
             line-height: 1.7;
             color: #f0f0f0;
+            background-color: #121212;
         }
 
-        /* Sidebar */
+        /* Sidebar styling */
         section[data-testid="stSidebar"] {
             background-color: #191919 !important;
             color: #f0f0f0;
@@ -60,7 +46,7 @@ def apply_custom_style():
             font-size: 1.3rem;
         }
 
-        /* Markdown content */
+        /* Markdown and text */
         .markdown-text-container {
             font-size: 1.05rem;
             color: #dddddd;
@@ -84,7 +70,7 @@ def apply_custom_style():
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
         }
 
-        /* Inputs and textareas */
+        /* Input fields */
         input, textarea {
             background-color: #2a2a2a !important;
             color: #f0f0f0 !important;
@@ -93,7 +79,7 @@ def apply_custom_style():
             padding: 0.5rem !important;
         }
 
-        /* Image elements */
+        /* Image styling */
         img {
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
