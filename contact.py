@@ -14,7 +14,6 @@ def show_contact():
     **📍 Location:** Barzan, Erbil, Iraq  
     """)
 
-    # Contact form UI (placeholder functionality)
     name = st.text_input("Your Name")
     email = st.text_input("Your Email")
     message = st.text_area("Your Message")
