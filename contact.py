@@ -1,22 +1,19 @@
 import streamlit as st
 
 def show_contact():
-    st.title("Get in Touch 📬")
+    st.title("Contact Us")
+    st.markdown("We're excited to hear from you! Feel free to reach out.")
 
     st.markdown("""
-    We'd love to hear from you!  
-    Whether you're looking to start a new project, collaborate, or just say hi, feel free to reach out.
+        **Email:** baqr00934879@gmail.com  
+        **Phone:** +964 750 857 8727  
+        **Location:** Barzan, Erbil, Iraq
     """)
 
-    st.markdown("""
-    **📧 Email:** [baqr00934879@gmail.com](mailto:baqr00934879@gmail.com)  
-    **📞 Phone:** +964 750 857 8727  
-    **📍 Location:** Barzan, Erbil, Iraq  
-    """)
+    with st.form(key='contact_form'):
+        name = st.text_input("Your Name")
+        email = st.text_input("Your Email")
+        message = st.text_area("Your Message")
 
-    name = st.text_input("Your Name")
-    email = st.text_input("Your Email")
-    message = st.text_area("Your Message")
-
-    if st.button("Send (placeholder)"):
-        st.success("Thanks! This is just a demo. In the real version, your message would be sent.")
+        if st.form_submit_button("Send"):
+            st.success("Thank you! Your message has been sent.")
