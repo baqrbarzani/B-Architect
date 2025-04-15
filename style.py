@@ -3,25 +3,10 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Set background image with overlay */
+        /* Dark background */
         .stApp {
-            background-image: url("projects/Baqrbarzani.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
+            background-color: #121212;
             color: #f0f0f0;
-        }
-
-        .stApp::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.65);
-            z-index: -1;
         }
 
         html, body, [class*="css"] {
@@ -29,6 +14,7 @@ def apply_custom_style():
             font-size: 16px;
             line-height: 1.6;
             color: #f0f0f0;
+            background-color: #121212;
         }
 
         /* Sidebar */
