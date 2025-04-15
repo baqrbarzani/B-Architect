@@ -3,10 +3,25 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Dark background */
+        /* Set background image with dark overlay */
         .stApp {
-            background-color: #121212;
+            background-image: url("projects/barzani.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
             color: #f0f0f0;
+        }
+
+        .stApp::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.65); /* Dark overlay */
+            z-index: -1;
         }
 
         html, body, [class*="css"] {
@@ -14,10 +29,9 @@ def apply_custom_style():
             font-size: 16px;
             line-height: 1.6;
             color: #f0f0f0;
-            background-color: #121212;
         }
 
-        /* Sidebar */
+        /* Sidebar styling */
         section[data-testid="stSidebar"] {
             background-color: #1e1e1e !important;
             color: #f0f0f0;
@@ -67,7 +81,7 @@ def apply_custom_style():
             padding: 0.5rem !important;
         }
 
-        /* Images */
+        /* Images inside content */
         img {
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
