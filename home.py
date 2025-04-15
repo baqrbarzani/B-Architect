@@ -2,7 +2,34 @@ import streamlit as st
 from style import apply_custom_style
 
 def show_home():
+    # Custom style for all pages
     apply_custom_style()
+
+    # Add background image specifically for login area
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url('projects/Baqrbarzani.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .stApp::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65); /* Dark overlay */
+            z-index: -1;
+        }
+        </style>
+        """, unsafe_allow_html=True
+    )
 
     # Initialize login state
     if "logged_in" not in st.session_state:
@@ -16,7 +43,6 @@ def show_home():
         password = st.text_input("Password", type="password")
 
         if st.button("Login"):
-            # Simple hardcoded check (for demo)
             if username == "admin" and password == "pass123":
                 st.session_state.logged_in = True
                 st.success("✅ Logged in successfully!")
@@ -35,7 +61,6 @@ def show_home():
             Explore our work and get in touch — let's build something beautiful together.
         """)
 
-        # Logout button
         if st.button("Logout"):
             st.session_state.logged_in = False
             st.rerun()
