@@ -23,10 +23,9 @@ if page == "Home":
     Our architectural studio specializes in modern, sustainable, and functional design for residential, commercial, and public spaces.
     """)
 
+    # Check for optional cover image
     if os.path.exists("cover.jpg"):
         st.image("cover.jpg", use_column_width=True, caption="Our recent project")
-    else:
-        st.warning("Add a 'cover.jpg' image in your project folder to display here.")
 
 # --- Projects Page ---
 elif page == "Projects":
@@ -43,9 +42,9 @@ elif page == "Projects":
                     image_path = os.path.join(project_folder, img)
                     st.image(image_path, caption=img.replace("_", " ").split(".")[0], use_column_width=True)
         else:
-            st.info("No images found in the 'projects' folder.")
+            st.info("You have no images yet. Add project images to the 'projects/' folder.")
     else:
-        st.warning("No 'projects' folder found. Create one and add your project images.")
+        st.info("Project gallery coming soon! Create a 'projects/' folder and add images when you're ready.")
 
 # --- Contact Page ---
 elif page == "Contact":
