@@ -3,6 +3,7 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
+        /* App background with image */
         .stApp {
             background-image: url("projects/Baqrbarzani.jpg");
             background-size: cover;
@@ -13,6 +14,7 @@ def apply_custom_style():
             color: #f0f0f0;
         }
 
+        /* Overlay for better readability */
         .stApp::before {
             content: "";
             position: fixed;
@@ -20,7 +22,7 @@ def apply_custom_style():
             left: 0;
             height: 100%;
             width: 100%;
-            background: rgba(0, 0, 0, 0.7);  /* dark overlay */
+            background: rgba(0, 0, 0, 0.65);  /* dark overlay */
             z-index: -1;
         }
 
@@ -31,47 +33,30 @@ def apply_custom_style():
             color: #f0f0f0;
         }
 
+        /* Sidebar */
         section[data-testid="stSidebar"] {
-            background-color: #191919 !important;
+            background-color: #1e1e1e !important;
             color: #f0f0f0;
-            border-right: 1px solid #2c2c2c;
+            border-right: 1px solid #333;
         }
 
+        /* Headings */
         h1, h2, h3 {
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
 
-        .markdown-text-container {
-            font-size: 1.05rem;
-            color: #dddddd;
+        h1 {
+            font-size: 2.2rem;
         }
 
-        .stButton>button {
-            background-color: #523A28 !important;
-            color: white !important;
-            border-radius: 8px;
-            padding: 0.6rem 1.3rem;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: 0.3s ease;
+        h2 {
+            font-size: 1.6rem;
         }
 
-        .stButton>button:hover {
-            background-color: #3e2b1e !important;
+        h3 {
+            font-size: 1.3rem;
         }
 
-        input, textarea {
-            background-color: #2a2a2a !important;
-            color: #f0f0f0 !important;
-            border-radius: 8px !important;
-            border: 1px solid #444 !important;
-        }
-
-        img {
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        </style>
-    """, unsafe_allow_html=True)
+        /* Text content */
