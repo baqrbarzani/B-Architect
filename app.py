@@ -1,11 +1,17 @@
 import streamlit as st
-from PIL import Image
 import os
+from PIL import Image
+
+from style import apply_custom_style
+from contact import show_contact
+
+# Apply custom theme styling
+apply_custom_style()
 
 # Set page configuration
 st.set_page_config(page_title="Architectural Studio", layout="wide")
 
-# --- Sidebar ---
+# --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Projects", "Contact"])
 
@@ -17,7 +23,10 @@ if page == "Home":
     Our architectural studio specializes in modern, sustainable, and functional design for residential, commercial, and public spaces.
     """)
 
-    st.image("cover.jpg", use_column_width=True, caption="Our recent project")
+    if os.path.exists("cover.jpg"):
+        st.image("cover.jpg", use_column_width=True, caption="Our recent project")
+    else:
+        st.warning("Add a 'cover.jpg' image in your project folder to display here.")
 
 # --- Projects Page ---
 elif page == "Projects":
@@ -25,27 +34,19 @@ elif page == "Projects":
 
     project_folder = "projects"
     if os.path.exists(project_folder):
-        images = [img for img in os.listdir(project_folder) if img.endswith((".png", ".jpg", ".jpeg"))]
+        images = [img for img in os.listdir(project_folder) if img.lower().endswith((".png", ".jpg", ".jpeg"))]
         
-        for img in images:
-            image_path = os.path.join(project_folder, img)
-            st.image(image_path, caption=img.replace("_", " ").split(".")[0], use_column_width=True)
+        if images:
+            cols = st.columns(3)
+            for idx, img in enumerate(images):
+                with cols[idx % 3]:
+                    image_path = os.path.join(project_folder, img)
+                    st.image(image_path, caption=img.replace("_", " ").split(".")[0], use_column_width=True)
+        else:
+            st.info("No images found in the 'projects' folder.")
     else:
-        st.warning("No project folder found. Create a folder named 'projects' and add your images.")
+        st.warning("No 'projects' folder found. Create one and add your project images.")
 
 # --- Contact Page ---
 elif page == "Contact":
-    st.title("Get in Touch 📬")
-
-    st.markdown("""
-    **Email:** contact@yourstudio.com  
-    **Phone:** +1-234-567-890  
-    **Instagram:** [@yourstudio](https://instagram.com/yourstudio)  
-    **Location:** 123 Design St, Architecture City, Country
-    """)
-
-    st.text_input("Your Name")
-    st.text_input("Your Email")
-    st.text_area("Your Message")
-    st.button("Send (non-functional placeholder)")
-
+    show_contact()
