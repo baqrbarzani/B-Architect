@@ -1,19 +1,17 @@
 import streamlit as st
+from style import apply_custom_style
 
 def show_home():
-    st.title("Welcome to B-Architect Studio")
-    st.markdown("### Designing spaces that inspire.")
+    apply_custom_style()
+    
+    st.title("Welcome to Our Architectural Studio")
+    st.markdown("### Creating space with vision and passion.")
 
-    st.image("projects/Architecture.jpg", use_container_width=True)
+    st.image("projects/barzani.jpg", use_container_width=True)
 
     st.markdown("""
-        We are a passionate architectural office based in Erbil, Iraq. Our mission is to craft creative, sustainable, and people-focused spaces.
-
-        **What we do:**
-        - Architectural Design
-        - Urban Planning
-        - Interior Design
-        - Concept Development
-
-        Our work blends functionality, aesthetics, and innovation — tailored to every client.
+        At our architectural office, we believe in design that blends creativity with function. 
+        We specialize in modern residential, commercial, and urban projects tailored to each client's needs. 
+        
+        Explore our work and get in touch — let's build something beautiful together.
     """)
