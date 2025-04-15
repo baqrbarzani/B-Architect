@@ -2,14 +2,14 @@ import streamlit as st
 import os
 from PIL import Image
 
+# Set page config FIRST before anything else
+st.set_page_config(page_title="Architectural Studio", layout="wide")
+
 from style import apply_custom_style
 from contact import show_contact
 
 # Apply custom theme styling
 apply_custom_style()
-
-# Set page configuration
-st.set_page_config(page_title="Architectural Studio", layout="wide")
 
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
@@ -23,7 +23,6 @@ if page == "Home":
     Our architectural studio specializes in modern, sustainable, and functional design for residential, commercial, and public spaces.
     """)
 
-    # Check for optional cover image
     if os.path.exists("cover.jpg"):
         st.image("cover.jpg", use_column_width=True, caption="Our recent project")
 
