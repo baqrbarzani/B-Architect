@@ -2,31 +2,24 @@ import streamlit as st
 import os
 from PIL import Image
 
-# Set page config FIRST before anything else
+# Set page config FIRST
 st.set_page_config(page_title="Architectural Studio", layout="wide")
 
 from style import apply_custom_style
 from contact import show_contact
+from home import show_home
 
-# Apply custom theme styling
+# Apply styling
 apply_custom_style()
 
-# --- Sidebar Navigation ---
+# Sidebar navigation
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Projects", "Contact"])
 
-# --- Home Page ---
+# Route pages
 if page == "Home":
-    st.title("Welcome to Our Architectural Studio 🏛️")
-    st.markdown("""
-    We design spaces that inspire.  
-    Our architectural studio specializes in modern, sustainable, and functional design for residential, commercial, and public spaces.
-    """)
+    show_home()
 
-    if os.path.exists("cover.jpg"):
-        st.image("cover.jpg", use_column_width=True, caption="Our recent project")
-
-# --- Projects Page ---
 elif page == "Projects":
     st.title("Our Projects 🏗️")
 
@@ -45,6 +38,5 @@ elif page == "Projects":
     else:
         st.info("Project gallery coming soon! Create a 'projects/' folder and add images when you're ready.")
 
-# --- Contact Page ---
 elif page == "Contact":
     show_contact()
