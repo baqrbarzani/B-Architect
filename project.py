@@ -2,19 +2,13 @@ import streamlit as st
 import os
 
 def show_projects():
-    st.title("Our Projects 🏗️")
+    st.title("Our Projects")
+    st.markdown("Explore some of our recent architectural designs.")
 
     project_folder = "projects"
-    if os.path.exists(project_folder):
-        images = [img for img in os.listdir(project_folder) if img.lower().endswith((".png", ".jpg", ".jpeg"))]
-        
-        if images:
-            cols = st.columns(3)
-            for idx, img in enumerate(images):
-                with cols[idx % 3]:
-                    image_path = os.path.join(project_folder, img)
-                    st.image(image_path, caption=img.replace("_", " ").split(".")[0], use_container_width=True)
-        else:
-            st.info("You have no images yet. Add project images to the 'projects/' folder.")
-    else:
-        st.info("Project gallery coming soon! Create a 'projects/' folder and add images when you're ready.")
+    image_files = [f for f in os.listdir(project_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg')) and f != "Architecture.jpg"]
+
+    cols = st.columns(3)
+    for i, image in enumerate(image_files):
+        with cols[i % 3]:
+            st.image(os.path.join(project_folder, image), caption=image.split('.')[0], use_container_width=True)
