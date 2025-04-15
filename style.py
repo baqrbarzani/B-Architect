@@ -3,7 +3,7 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Background image for entire app */
+        /* Background image */
         .stApp {
             background-image: url("projects/Baqrbarzani.jpg");
             background-size: cover;
@@ -22,10 +22,11 @@ def apply_custom_style():
             left: 0;
             height: 100%;
             width: 100%;
-            background: rgba(0, 0, 0, 0.7); /* darken effect */
+            background: rgba(0, 0, 0, 0.7);  /* 70% dark overlay */
             z-index: -1;
         }
 
+        /* Base layout and fonts */
         html, body, [class*="css"] {
             font-family: 'Segoe UI', sans-serif;
             font-size: 16px;
@@ -36,6 +37,7 @@ def apply_custom_style():
         /* Sidebar */
         section[data-testid="stSidebar"] {
             background-color: #191919 !important;
+            color: #f0f0f0;
             border-right: 1px solid #2c2c2c;
         }
 
@@ -43,8 +45,22 @@ def apply_custom_style():
         h1, h2, h3 {
             font-weight: 700;
             color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        /* Markdown content */
         .markdown-text-container {
             font-size: 1.05rem;
             color: #dddddd;
@@ -52,7 +68,7 @@ def apply_custom_style():
 
         /* Buttons */
         .stButton>button {
-            background-color: #523A28 !important;
+            background-color: #523A28 !important;  /* Royal Oven */
             color: white !important;
             border: none;
             border-radius: 8px;
@@ -68,7 +84,7 @@ def apply_custom_style():
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
         }
 
-        /* Inputs */
+        /* Inputs and textareas */
         input, textarea {
             background-color: #2a2a2a !important;
             color: #f0f0f0 !important;
@@ -77,7 +93,7 @@ def apply_custom_style():
             padding: 0.5rem !important;
         }
 
-        /* Image styling */
+        /* Image elements */
         img {
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
