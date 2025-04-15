@@ -1,17 +1,20 @@
 import streamlit as st
 
 def apply_custom_style():
-    st.markdown("""
+    st.markdown(
+        """
         <style>
-        /* Background image with dark overlay */
+        /* Set background image for the entire app */
         .stApp {
-            background-image: url("projects/barzani.jpg");
+            background-image: url('projects/Baqrbarzani.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
-            color: #f0f0f0;
+            color: white;
         }
 
+        /* Optional: Add a dark overlay for readability */
         .stApp::before {
             content: "";
             position: fixed;
@@ -19,74 +22,39 @@ def apply_custom_style():
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.65); /* Overlay darkness */
+            background: rgba(0, 0, 0, 0.6);
             z-index: -1;
         }
 
-        html, body, [class*="css"] {
-            font-family: 'Segoe UI', sans-serif;
-            background: transparent;
-            color: #f0f0f0;
-        }
-
-        /* Sidebar */
-        section[data-testid="stSidebar"] {
-            background-color: #1e1e1e !important;
-            color: #f0f0f0;
-            border-right: 1px solid #333;
-        }
-
-        /* Headings */
-        h1, h2, h3 {
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.6rem; }
-        h3 { font-size: 1.3rem; }
-
-        /* Markdown text */
-        .markdown-text-container {
-            font-size: 1.05rem;
-            color: #dddddd;
-        }
-
-        /* Buttons */
-        .stButton>button {
-            background-color: #523A28 !important;
+        /* General text styling for better readability */
+        h1, h2, h3, h4, h5, h6, p, label, div {
             color: white !important;
-            border: none;
+        }
+
+        .stButton > button {
+            background-color: #556B8D;
+            color: white;
             border-radius: 8px;
-            padding: 0.6rem 1.3rem;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            padding: 0.5em 1em;
+            border: none;
         }
 
-        .stButton>button:hover {
-            background-color: #3e2b1e !important;
+        .stTextInput > div > div > input {
+            background-color: #222;
+            color: white;
+            border-radius: 8px;
         }
 
-        /* Inputs */
-        input, textarea {
-            background-color: #2a2a2a !important;
-            color: #f0f0f0 !important;
-            border-radius: 8px !important;
-            border: 1px solid #444 !important;
-            padding: 0.5rem !important;
+        .stTextArea textarea {
+            background-color: #222;
+            color: white;
+            border-radius: 8px;
         }
 
-        /* Images */
-        img {
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .element-container {
-            margin-bottom: 1.5rem;
+        .stImage img {
+            border-radius: 16px;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
         }
         </style>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True
+    )
