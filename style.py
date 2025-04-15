@@ -3,29 +3,29 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Global font and background */
-        html, body, [class*="css"]  {
+        /* Global styling */
+        html, body, [class*="css"] {
             font-family: 'Segoe UI', sans-serif;
             background-color: #f9f9f9;
-            color: #1c1c1e;
+            color: #1c1c1e;  /* Dark text */
             line-height: 1.6;
         }
 
         /* App background */
         .stApp {
-            background-color: #fdfdfd;
+            background-color: #ffffff;
             padding: 1rem;
         }
 
-        /* Sidebar styling */
-        .css-1d391kg {
-            background-color: #fff !important;
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: #f3f3f3 !important;
             border-right: 1px solid #e0e0e0;
         }
 
         /* Title and headers */
         h1, h2, h3 {
-            color: #2e2e2e;
+            color: #2b2b2b;
         }
 
         /* Buttons */
@@ -48,14 +48,18 @@ def apply_custom_style():
         /* Inputs & Text Area */
         input, textarea {
             border-radius: 8px !important;
+            border: 1px solid #ccc !important;
+            padding: 0.5rem !important;
+            color: #1c1c1e !important;
+            background-color: #fff !important;
         }
 
-        /* Image border radius */
+        /* Image style */
         img {
             border-radius: 8px;
         }
 
-        /* Spacing for images/cards */
+        /* Adjust spacing */
         .element-container {
             margin-bottom: 1.5rem;
         }
