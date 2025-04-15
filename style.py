@@ -3,31 +3,31 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Overall background and font */
+        /* Global dark theme */
         html, body, [class*="css"] {
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f1ee;  /* Soft warm beige */
-            color: #2a2a2a;  /* Clean dark gray text */
+            background-color: #121212;  /* Deep dark gray */
+            color: #f0f0f0;  /* Light text */
             font-size: 16px;
             line-height: 1.7;
         }
 
         .stApp {
-            background-color: #fefefe;
+            background-color: #1e1e1e;
             padding: 1.5rem;
         }
 
         /* Sidebar */
         section[data-testid="stSidebar"] {
-            background-color: #f3ede9 !important;
-            color: #2a2a2a;
-            border-right: 1px solid #dcd3ca;
+            background-color: #191919 !important;
+            color: #f0f0f0;
+            border-right: 1px solid #2c2c2c;
         }
 
         /* Headings */
         h1, h2, h3 {
             font-weight: 700;
-            color: #1e1e1e;
+            color: #ffffff;
             letter-spacing: 0.5px;
             margin-top: 1rem;
         }
@@ -44,10 +44,10 @@ def apply_custom_style():
             font-size: 1.3rem;
         }
 
-        /* Paragraphs and markdown text */
+        /* Paragraphs and markdown */
         .markdown-text-container {
             font-size: 1.05rem;
-            color: #3c3c3c;
+            color: #dddddd;
         }
 
         /* Buttons */
@@ -60,28 +60,27 @@ def apply_custom_style():
             font-size: 1rem;
             font-weight: 500;
             transition: background-color 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
         }
 
         .stButton>button:hover {
             background-color: #3e2b1e !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
         }
 
-        /* Input fields and text area */
+        /* Input fields */
         input, textarea {
-            background-color: #fff !important;
+            background-color: #2a2a2a !important;
+            color: #f0f0f0 !important;
             border-radius: 8px !important;
-            border: 1px solid #ccc !important;
+            border: 1px solid #444 !important;
             padding: 0.5rem !important;
-            font-size: 1rem !important;
-            color: #2a2a2a !important;
         }
 
-        /* Image styling */
+        /* Images */
         img {
             border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         /* Block spacing */
