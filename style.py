@@ -3,29 +3,51 @@ import streamlit as st
 def apply_custom_style():
     st.markdown("""
         <style>
-        /* Global styling */
+        /* Overall background and font */
         html, body, [class*="css"] {
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f9f9f9;
-            color: #1c1c1e;  /* Dark text */
-            line-height: 1.6;
+            background-color: #f4f1ee;  /* Soft warm beige */
+            color: #2a2a2a;  /* Clean dark gray text */
+            font-size: 16px;
+            line-height: 1.7;
         }
 
-        /* App background */
         .stApp {
-            background-color: #ffffff;
-            padding: 1rem;
+            background-color: #fefefe;
+            padding: 1.5rem;
         }
 
         /* Sidebar */
         section[data-testid="stSidebar"] {
-            background-color: #f3f3f3 !important;
-            border-right: 1px solid #e0e0e0;
+            background-color: #f3ede9 !important;
+            color: #2a2a2a;
+            border-right: 1px solid #dcd3ca;
         }
 
-        /* Title and headers */
+        /* Headings */
         h1, h2, h3 {
-            color: #2b2b2b;
+            font-weight: 700;
+            color: #1e1e1e;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        /* Paragraphs and markdown text */
+        .markdown-text-container {
+            font-size: 1.05rem;
+            color: #3c3c3c;
         }
 
         /* Buttons */
@@ -34,32 +56,35 @@ def apply_custom_style():
             color: white !important;
             border: none;
             border-radius: 8px;
-            padding: 0.6rem 1.2rem;
+            padding: 0.6rem 1.3rem;
             font-size: 1rem;
+            font-weight: 500;
             transition: background-color 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
         }
 
         .stButton>button:hover {
             background-color: #3e2b1e !important;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* Inputs & Text Area */
+        /* Input fields and text area */
         input, textarea {
+            background-color: #fff !important;
             border-radius: 8px !important;
             border: 1px solid #ccc !important;
             padding: 0.5rem !important;
-            color: #1c1c1e !important;
-            background-color: #fff !important;
+            font-size: 1rem !important;
+            color: #2a2a2a !important;
         }
 
-        /* Image style */
+        /* Image styling */
         img {
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* Adjust spacing */
+        /* Block spacing */
         .element-container {
             margin-bottom: 1.5rem;
         }
