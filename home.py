@@ -1,15 +1,19 @@
 import streamlit as st
-import os
 
 def show_home():
-    # Banner Image
-    banner_path = "projects/Architecture.jpg"
-    if os.path.exists(banner_path):
-        st.image(banner_path, use_container_width=True, caption="Timeless Architectural Vision")
+    st.title("Welcome to B-Architect Studio")
+    st.markdown("### Designing spaces that inspire.")
 
-    # Intro Text
-    st.title("Welcome to Our Architectural Studio 🏛️")
+    st.image("projects/Architecture.jpg", use_container_width=True)
+
     st.markdown("""
-    We design spaces that inspire.  
-    Our architectural studio specializes in modern, sustainable, and functional design for residential, commercial, and public spaces.
+        We are a passionate architectural office based in Erbil, Iraq. Our mission is to craft creative, sustainable, and people-focused spaces.
+
+        **What we do:**
+        - Architectural Design
+        - Urban Planning
+        - Interior Design
+        - Concept Development
+
+        Our work blends functionality, aesthetics, and innovation — tailored to every client.
     """)
